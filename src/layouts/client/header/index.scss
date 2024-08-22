@@ -1,0 +1,103 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #181818;
+  padding: 10px 20px;
+  gap: 40px;
+  --webkit-backdrop-filter: blur(10px);
+
+  .header-logo {
+    img {
+      width: 50px;
+    }
+  }
+
+  .header-menu-icon {
+    display: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .header-nav {
+    display: flex;
+    gap: 40px;
+
+    .nav-item {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+
+      &:hover {
+        color: #ff0000;
+      }
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 40px;
+
+    .register,
+    .login {
+      transition: transform 0.3s ease;
+    }
+
+    .register {
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 50px;
+      width: 125px;
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+        transform: scale(1.1);
+      }
+    }
+
+    .login {
+      background-color: #ff0000;
+      border: none;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 50px;
+      width: 125px;
+
+      &:hover {
+        background-color: #1f00e6;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header-nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #181818;
+      padding: 20px 0;
+      gap: 20px;
+
+      &.visible {
+        display: flex;
+      }
+    }
+
+    .header-menu-icon {
+      display: block;
+    }
+
+    .header-actions {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
